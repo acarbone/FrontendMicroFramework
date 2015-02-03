@@ -203,7 +203,7 @@ module.exports = function(grunt) {
 			options: {
 				hostname: '*',
 				port: '<%= hosts.development.port %>',
-				open: '<%= hosts.development.url %>:<%= hosts.development.port %>/'
+				open: '<%= hosts.development.url %>:<%= hosts.development.port %>/dev/'
 			},
 			dev: {
 				options: {
