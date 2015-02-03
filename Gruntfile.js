@@ -152,7 +152,7 @@ module.exports = function(grunt) {
 		},
 
 		/**
-		 * Parker CSS - https://github.com/katiefenn/parker
+		 * Parker CSS <https://github.com/katiefenn/parker>
 		 * ===============================
 		 */
 		parker: {
@@ -165,6 +165,27 @@ module.exports = function(grunt) {
 				src: ['<%= paths.tmp %>/css/screen.css']
 			},
 		},
+
+		/**
+		 * Generation of Sass styleguide for mixins, extends, functions.
+		 * Tool: SassDoc <http://sassdoc.com/>
+		 * @command: grunt sassdoc
+		 * ===============================
+		 */
+		sassdoc: {
+			default: {
+				src: '<%= paths.src %>/sass/screen.sass',
+			},
+		},
+		//@TODO: apply sassdoc annotation to sass codebase 
+		//@TODO: implement CSS styleguide generator
+		/*
+			https://github.com/indieisaconcept/grunt-styleguide
+			https://github.com/kneath/kss
+			https://www.npmjs.com/package/grunt-kss
+			http://mikefowler.me/2013/10/14/static-styleguides-kss-node/
+			http://trulia.github.io/hologram/
+		*/
 
 		/**
 		 * Watch for new changes.
