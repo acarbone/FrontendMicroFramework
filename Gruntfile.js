@@ -152,6 +152,21 @@ module.exports = function(grunt) {
 		},
 
 		/**
+		 * Parker CSS - https://github.com/katiefenn/parker
+		 * ===============================
+		 */
+		parker: {
+			dist: {
+				options: {},
+				src: ['<%= paths.dist %>/css/screen.css']
+			},
+			dev: {
+				options: {},
+				src: ['<%= paths.tmp %>/css/screen.css']
+			},
+		},
+
+		/**
 		 * Watch for new changes.
 		 * Automatically called from:
 		 * @command: grunt dev
@@ -233,5 +248,13 @@ module.exports = function(grunt) {
 		'autoprefixer:dev',
 		'connect:dev',
 		'concurrent'
+	]);
+	grunt.registerTask('css-analysis', [
+		'csslint:dist',
+		'parker:dist',
+	]);
+	grunt.registerTask('css-analysis:dev', [
+		'csslint:dev',
+		'parker:dev',
 	]);
 };
