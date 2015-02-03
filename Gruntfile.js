@@ -139,6 +139,19 @@ module.exports = function(grunt) {
 		},
 
 		/**
+		 * CSSLint
+		 * ===============================
+		 */
+		csslint: {
+			dist: {
+				src: ['<%= paths.dist %>/css/screen.css']
+			},
+			dev: {
+				src: ['<%= paths.tmp %>/css/screen.css']
+			},
+		},
+
+		/**
 		 * Watch for new changes.
 		 * Automatically called from:
 		 * @command: grunt dev
