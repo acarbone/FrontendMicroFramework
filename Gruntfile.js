@@ -92,6 +92,53 @@ module.exports = function(grunt) {
 		},
 
 		/**
+		 * SASS
+		 * ===============================
+		 */
+		sass: {
+			dist: {
+				options: {
+					style: 'compressed',
+					sourcemap: 'none'
+				},
+				files: {
+					'<%= paths.dist %>/css/screen.css': '<%= paths.src %>/sass/screen.sass'
+				}
+			},
+			dev: {
+				options: {
+					sourcemap: 'auto'
+				},
+				files: {
+					'<%= paths.tmp %>/css/screen.css': '<%= paths.src %>/sass/screen.sass'
+				}
+			},
+		},
+
+		/**
+		 * Autoprefixer
+		 * ===============================
+		 */
+		autoprefixer: {
+			dist: {
+				options:{
+					browsers: ['last 10 version', 'ie >= 8']
+				},
+				files: {
+					'<%= paths.dist %>/css/screen.css': '<%= paths.dist %>/css/screen.css'
+				},
+			},
+			dev: {
+				options:{
+					browsers: ['last 10 version', 'ie >= 8']
+				},
+				files: {
+					'<%= paths.tmp %>/css/screen.css': '<%= paths.tmp %>/css/screen.css'
+				},
+			},
+		},
+
+		/**
 		 * Watch for new changes.
 		 * Automatically called from:
 		 * @command: grunt dev
@@ -115,6 +162,11 @@ module.exports = function(grunt) {
 			src: {
 				files: ['<%= paths.src %>/**/*.twig'],
 				tasks: ['output_twig:dev']
+			},
+
+			sass: {
+				files: ['<%= paths.src %>/sass/**/*.sass'],
+				tasks: ['sass:dev', 'autoprefixer:dev']
 			},
 		},
 
@@ -159,9 +211,13 @@ module.exports = function(grunt) {
 	grunt.registerTask('default', [
 		'output_twig:dist',
 		'imagemin:dist',
+		'sass:dist',
+		'autoprefixer:dist',
 	]);
 	grunt.registerTask('dev', [
 		'output_twig:dev',
+		'sass:dev',
+		'autoprefixer:dev',
 		'connect:dev',
 		'concurrent'
 	]);
