@@ -9,7 +9,7 @@
 // -------------------------------------
 
 /// Parse a number to int
-/// @param {float} $n - Number to be parsed to int
+/// @param {float} $n - Value to be parsed to int
 /// @return {int}
 @function parseInt($n)
 	@return $n / ($n * 0 + 1)
@@ -18,6 +18,9 @@
 //   Mixins
 // -------------------------------------
 
+/// Generate rem fallback in px for legacy browsers compatibility
+/// @param {string} $property - The property to be valued
+/// @param {string} $values - The value to be set. It could be passed using px, or rer. For example: 12px, 1.2rem
 =rem($property, $values)
 	$px: ()
 	$rem: ()
@@ -40,11 +43,17 @@
 		#{$property}: $px
 		#{$property}: $rem
 
+/// Generate opacity fallback for MS legacy browsers compatibility
+/// @param {float} $value - The opacity value to set.
 =opacity($value)
 	$IEValue: $value*100
 	opacity: $value
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")"
 
+/// Generate rgba fallback for MS legacy browsers compatibility
+/// @param {string} $property - The property to be valued
+/// @param {string} $color - The color to be used.
+/// @param {float} $alpha - The alpha to set the level of opacity for the $color.
 =rgba($property, $color, $alpha)
 	#{$property}: #{$color}
 	#{$property}: rgba($color, $alpha)
@@ -53,7 +62,7 @@
 //   Extends
 // -------------------------------------
 
-// ----- Clearfix ----- //
+/// Define a Clearfix for clearing floats on a wrapper element
 %clearfix
 	&:before,
 	&:after
@@ -62,7 +71,7 @@
 	&:after
 		clear: both
 
-// ----- Absolute element - Expanded 100% width & height ----- //
+/// Absolute element - Expanded 100% width & height
 %absolute-wrap
 	position: absolute
 	top: 0

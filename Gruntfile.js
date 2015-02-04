@@ -180,7 +180,6 @@ module.exports = function(grunt) {
 				}
 			},
 		},
-		//@TODO: apply sassdoc annotation to sass codebase 
 		//@TODO: implement CSS styleguide generator
 		/*
 			https://github.com/indieisaconcept/grunt-styleguide
@@ -242,7 +241,7 @@ module.exports = function(grunt) {
 			options: {
 				hostname: '*',
 				port: '<%= hosts.development.port %>',
-				open: '<%= hosts.development.url %>:<%= hosts.development.port %>/dev/'
+				open: '<%= hosts.development.url %>:<%= hosts.development.port %>/'
 			},
 			dev: {
 				options: {
