@@ -25,6 +25,7 @@
     "grunt-output-twig": "^0.1.2",
     "grunt-parker": "^0.1.3",
     "grunt-sassdoc": "^2.0.0",
+    "load-grunt-config": "^0.16.0",
     "load-grunt-tasks": "~0.4.0",
     "time-grunt": "^0.4.0"
   }
