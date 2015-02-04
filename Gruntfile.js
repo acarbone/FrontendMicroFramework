@@ -175,6 +175,9 @@ module.exports = function(grunt) {
 		sassdoc: {
 			default: {
 				src: '<%= paths.src %>/sass/screen.sass',
+				options: {
+					dest: 'doc/sass'
+				}
 			},
 		},
 		//@TODO: apply sassdoc annotation to sass codebase 
