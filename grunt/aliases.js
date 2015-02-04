@@ -4,10 +4,10 @@
 
 module.exports = {
 	'default': [
-		'output_twig:dist',
-		'imagemin:dist',
-		'sass:dist',
-		'autoprefixer:dist'
+		'newer:output_twig:dist',
+		'newer:imagemin:dist',
+		'newer:sass:dist',
+		'newer:autoprefixer:dist'
 	],
 	'dev': [
 		'output_twig:dev',
