@@ -174,7 +174,7 @@ module.exports = function(grunt) {
 		 */
 		sassdoc: {
 			default: {
-				src: '<%= paths.src %>/sass/screen.sass',
+				src: '<%= paths.src %>/sass/**/*.sass',
 				options: {
 					dest: 'doc/sass'
 				}
