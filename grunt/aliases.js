@@ -13,6 +13,7 @@ module.exports = {
 		'output_twig:dev',
 		'sass:dev',
 		'autoprefixer:dev',
+		'copy:dev',
 		'connect:dev',
 		'concurrent'
 	],
