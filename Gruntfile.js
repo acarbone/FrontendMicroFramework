@@ -17,20 +17,7 @@ module.exports = function(grunt) {
 				src: 'src',// Sources - Twig Templates and Assets 
 				templates: '<%= paths.src %>/templates',// Template sources
 				tmp: 'dev',// Temporary files for Grunt local server
-			},
-
-			/**
-			 * Information about available hosts.
-			 * Development: Grunt local server information: use from cli "grunt dev"
-			 * ===============================
-			 */
-			hosts: {
-				development: {
-					global_assets_dir: '/dev/',
-					url: 'http://localhost',
-					port: 8000,
-				}
-			},
+			}
 		},
 
 		loadGruntTasks: {

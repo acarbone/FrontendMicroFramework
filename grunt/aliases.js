@@ -14,8 +14,8 @@ module.exports = {
 		'sass:dev',
 		'autoprefixer:dev',
 		'copy:dev',
-		'connect:dev',
-		'concurrent'
+		'browserSync',
+		'watch'
 	],
 	'css-analysis': [
 		'csslint:dist',

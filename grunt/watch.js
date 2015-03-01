@@ -1,6 +1,6 @@
 /**
  * Watch for new changes.
- * Automatically called from:
+ * Automatically called using:
  * @command: grunt dev
  * ===============================
  */
@@ -8,7 +8,14 @@
 module.exports = {
 	options: {
 		interrupt: true,
-		livereload: true,
+		livereload: true
+	},
+
+	configFiles: {
+		files: [ 'Gruntfile.js', 'grunt/*.js' ],
+		options: {
+			reload: true
+		}
 	},
 
 	config: {
